@@ -1,0 +1,32 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - ask_symptom
+  - select_symptom
+  - inform_symptoms
+
+entities:
+  - symptom
+
+slots:
+  symptom:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_entity
+        entity: symptom
+
+responses:
+  utter_greet:
+    - text: "Hello! How can I assist you today?"
+    - text: "હેલો! હું તમારી કેવી રીતે મદદ કરી શકું?"
+
+  utter_goodbye:
+    - text: "Goodbye! Take care."
+    - text: "આવજો! તમારું ધ્યાન રાખજો."
+
+actions:
+  - action_ask_symptom
+  - action_provide_treatment

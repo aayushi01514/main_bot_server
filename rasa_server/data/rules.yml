@@ -1,0 +1,29 @@
+version: "3.1"
+
+rules:
+  - rule: Greet
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Ask for symptom
+    steps:
+      - intent: ask_symptom
+      - action: action_ask_symptom
+
+  - rule: Handle selected symptom
+    steps:
+      - intent: select_symptom
+      - slot_was_set:
+          - symptom: true
+      - action: action_provide_treatment
+
+  - rule: Respond to multiple symptoms
+    steps:
+    - intent: inform_symptoms
+    - action: action_provide_treatment

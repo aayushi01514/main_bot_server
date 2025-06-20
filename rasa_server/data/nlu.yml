@@ -1,0 +1,48 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - Hii
+      - namaste
+      - kem cho
+      - હાય
+      - નમસ્તે
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you
+      - આવજો
+      - પરસે મળીશું
+
+  - intent: ask_symptom
+    examples: |
+      - I feel sick
+      - I'm not feeling well
+      - I want to check symptoms
+      - What could be wrong?
+      - મને કંઈક તકલીફ છે
+      - હું ઠીક અનુભવતો નથી
+      - લક્ષણો બતાવો
+
+  - intent: select_symptom
+    examples: |
+      - [fever](symptom)
+      - [headache](symptom)
+      - [તાવ](symptom)
+      - [માથાનો દુખાવો](symptom)
+      - I have [cold](symptom)
+      - મારે [ઉધરસ](symptom) છે
+
+  - intent: inform_symptoms
+    examples: |
+      - I have [fever](symptom) and [cold](symptom)
+      - I am suffering from [headache](symptom) and [nausea](symptom)
+      - [Fever](symptom), [cold](symptom) and [cough](symptom)
+      - મને [તાવ](symptom) અને [ઠંડ](symptom) છે
+      - I have [vomiting](symptom), [cough](symptom), and [cold](symptom)
+      - મારે [માથામાં દુખાવો](symptom) અને [ઉલ્ટી](symptom) છે
