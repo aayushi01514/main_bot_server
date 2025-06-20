@@ -6,4 +6,4 @@ COPY . /app
 
 EXPOSE 8000
 
-CMD rasa run --enable-api --cors "*" --debug --port ${PORT}
+CMD /bin/sh -c "rasa run --enable-api --cors '*' --debug --port ${PORT}"
