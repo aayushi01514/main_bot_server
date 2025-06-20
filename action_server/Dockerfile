@@ -11,3 +11,4 @@ RUN pip install pymongo requests
 # This is already the default CMD of rasa-sdk image, 
 # but you can explicitly define it to avoid confusion
 CMD ["start", "--actions", "actions", "--port", "5055", "--cors", "*", "--debug"]
+
