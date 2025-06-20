@@ -1,13 +1,12 @@
-FROM python:3.10-slim
-
-RUN apt-get update && apt-get install -y gcc
-
-RUN pip install rasa-sdk==3.6.2 pymongo requests
+FROM rasa/rasa-sdk:3.6.2
 
 WORKDIR /app
 
 COPY . .
 
-EXPOSE 5055
+# Install any extra packages your actions.py needs:
+RUN pip install pymongo requests
 
-CMD ["rasa", "run", "actions", "--port", "5055", "--cors", "*", "--debug"]
+# The rasa-sdk image automatically runs:
+# start --actions actions
+# so you don't need to define CMD again unless you customize it
