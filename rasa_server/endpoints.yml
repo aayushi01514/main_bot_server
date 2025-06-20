@@ -1,6 +1,6 @@
 action_endpoint:
   # url: "http://localhost:5055/webhook"
-  url: "https://main-bot-server-1.onrender.com"
+  url: "https://main-bot-server-1.onrender.com/webhook"
 
 cors:
   enabled: true
