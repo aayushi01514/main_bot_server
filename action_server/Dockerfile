@@ -4,9 +4,10 @@ WORKDIR /app
 
 COPY . .
 
-# Install any extra packages your actions.py needs:
+# Install any extra Python dependencies (only if needed)
 RUN pip install pymongo requests
 
-# The rasa-sdk image automatically runs:
-# start --actions actions
-# so you don't need to define CMD again unless you customize it
+# Default CMD (automatically starts action server):
+# This is already the default CMD of rasa-sdk image, 
+# but you can explicitly define it to avoid confusion
+CMD ["start", "--actions", "actions", "--port", "5055", "--cors", "*", "--debug"]
