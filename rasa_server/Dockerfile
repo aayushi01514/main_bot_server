@@ -4,4 +4,6 @@ WORKDIR /app
 
 COPY . /app
 
+EXPOSE 8000
+
 CMD ["run", "--enable-api", "--cors", "*", "--debug", "--port", "8000"]
