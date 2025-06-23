@@ -1,15 +1,18 @@
-FROM rasa/rasa:3.6.21-full
+# Use the official Rasa image
+FROM rasa/rasa:3.6.21
 
-USER root
-
+# Set working directory
 WORKDIR /app
 
-COPY . .
+# Copy all project files to container
+COPY . /app
 
-RUN chmod +x start.sh
+# Install any additional dependencies if needed
+# Uncomment if you have a requirements.txt for additional dependencies
+# RUN pip install --no-cache-dir -r requirements.txt
 
-USER 1001
-
+# Expose Rasa server port
 EXPOSE 5005
 
-CMD ["./start.sh"]
+# Start Rasa server
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug"]
