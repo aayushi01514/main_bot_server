@@ -6,4 +6,6 @@ COPY . .
 
 EXPOSE 5005
 
+ENTRYPOINT []
+
 CMD ["python", "start.py"]
