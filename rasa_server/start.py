@@ -11,8 +11,9 @@ cmd = [
     "*",
     "--debug",
     "--port",
-    port
+    f"{port}"   # ensure it’s string
 ]
 
-print(f"Starting Rasa server on port {port}...")
+print(f"Running command: {' '.join(cmd)}")
+
 subprocess.run(cmd)
