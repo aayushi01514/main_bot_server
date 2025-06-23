@@ -2,10 +2,6 @@ FROM rasa/rasa:3.6.21-full
 
 WORKDIR /app
 
-COPY . .
+COPY . /app
 
-EXPOSE 5005
-
-ENTRYPOINT []
-
-CMD ["python", "start.py"]
+CMD ["run", "--enable-api", "--cors", "*", "--debug", "--port", "8000"]
