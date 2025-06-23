@@ -13,7 +13,5 @@ cmd = [
     "--port",
     f"{port}"   # ensure it’s string
 ]
-
 print(f"Running command: {' '.join(cmd)}")
-
 subprocess.run(cmd)
