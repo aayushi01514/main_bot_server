@@ -4,7 +4,6 @@ WORKDIR /app
 
 COPY . /app
 
-EXPOSE 8000
+EXPOSE 5005
 
-# Use shell form directly (do not wrap inside /bin/sh -c again)
-CMD rasa run --enable-api --cors "*" --debug --port $PORT
+CMD bash -c "rasa run --enable-api --cors '*' --debug --port ${PORT}"
