@@ -6,4 +6,4 @@ COPY . /app
 
 EXPOSE 5005
 
-CMD bash -c "rasa run --enable-api --cors '*' --debug --port ${PORT:-5005}"
+CMD ["bash", "-c", "rasa run --enable-api --cors '*' --debug --port ${PORT:-5005}"]
