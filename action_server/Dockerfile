@@ -12,4 +12,7 @@ COPY . .
 # Install your required Python dependencies
 RUN pip install pymongo
 
+RUN pip install requests
+RUN pip install rasa-sdk==3.6.2
+
 CMD ["start", "--actions", "actions", "--port", "5055", "--cors", "*", "--debug"]
